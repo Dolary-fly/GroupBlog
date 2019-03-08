@@ -1,0 +1,119 @@
+ <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <title>登录/注册</title>
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="css/style1.css">
+	  <!-- <script type="text/javascript" src="./js/导航.js"></script> -->
+	  <script src="./js/jquery-3.3.1.js"></script>
+	  <meta name="viewport" content="width=device-width,inital-scale=1.0"/>
+	  <style>
+		#displayLoginVer,#displayRegVer{
+			width:150px;
+			height:50px;
+		}
+	  </style>
+ </head>
+ <body>
+     <div class="main">
+         <div class="quarter-div col-xs-12 col-ms-12 col-md-6 col-lg-6">
+         	<div class="wlr">
+         		<a href="index.html"><img src="img/logo.png"></a>
+         	</div>
+         	<div class="qaz">
+         		<p style="color: #fff; text-align: center;"><em><b>welcome</b></em>&nbsp;&nbsp;&nbsp;to&nbsp;<br>Association&nbsp;&nbsp;of<br><em><i><b>Network</i></b><br>Technology</em></p>
+         	</div>
+         </div>
+         <div class="quarter-div code col-xs-12 col-ms-12 col-md-6 col-lg-6">
+         	<div style="text-align: center;margin-bottom: 0;" class="cls">
+         		<p style="color:#fff;"><button id="denglu" style="border:0;" class="wq">登录</button>&nbsp;&nbsp;|&nbsp;&nbsp;<button id="zhuce" class="wq">注册</button></p>
+         	</div>
+        <div class="container" id="first">
+		 <form role = "form">
+
+			<div class = "form-group sa"><!-- sa控制每个输入框的上下边距 -->
+				<label>用户名</label>
+				<input type=" text" class = "form-control" placeholder="user" id="user-login">
+			</div>
+			<div class ="input-group-sm sa ">
+				<label>密码&nbsp</label>
+
+				<input type="password" class="form-control" placeholder="enter password" id="psw-login">
+	    	</div>
+
+	    	<div class="form-group sa">
+	    		<label >验证码</label>
+				<input type="text" class="form-control" placeholder="enter auth code" id="valicode-login"><br>
+				<div id="displayLoginVer" title="点击切换验证码">
+
+				</div>
+			</div>
+
+        	<!-- <div class="form-group">
+				<div calss="checkbox">
+					<label>
+						<input type="checkbox" id="ifCheck">记住密码
+					</label>
+				</div>
+			</div> -->
+	    	<div class="form-group za"><!-- za提交按钮的居中 -->
+				<button type="button" class="btn btn-info btn-block" id="submit-login">登录</button>
+	    	</div>
+        </form>
+    </div>
+        <div class="container1" id="second" style="display: none;">
+           <form role="form">
+        	<div class="form-group sa">
+        		<label>用户名</label>
+				<input type="text" class="form-control" placeholder="user" id="userName"><br>
+				<!-- 用户名错误提示框 -->
+				<span class="errPrint"></span>
+        	</div>
+        	<div class="form-group sa">
+        		<label>密码</label>
+				<input type="password" class="form-control" placeholder="password" id="password"><br>
+				<!-- 密码错误提示框 -->
+				<span class="errPrint"></span>
+        	</div>
+        	<div class="form-group sa" >
+        		<label>再次输入密码</label>
+				<input type="password" class="form-control" placeholder="password again" id="rePassword"><br>
+				<!-- 在此输入密码提示框 -->
+				<span class="errPrint"></span>
+        	</div>
+        	<div class="se"><!-- se大div边距，边角处理 -->
+        		<label>组别&nbsp&nbsp&nbsp</label>
+        		<select class="selectpicker" id="selectOption">
+					<option>前端组</option>
+ 					<option>安全组</option>
+ 					<option>运营组</option>
+ 					<option>网络组</option>
+ 					<option>视觉设计组</option>
+				</select>
+        	</div>
+        	<div class="form-group sa">
+        		<label>邀请码</label>
+        		<input type="text" class="form-control" placeholder="Invation code" id="inviCode">
+        	</div>
+        	<div class="form-group sa">
+        		<label>验证码</label>
+				<input type="text" class="form-control" placeholder="auth code" id="svgCode">
+				<div id="displayRegVer" title="点击切换验证码">
+
+				</div>
+				<!-- <img src="http://localhost:8080/captcha-login" id="verictLog" title="看不清,换一张" onclick={$(event.target).attr('src','http://localhost:8080/captcha-login?'+Math.random())} /> -->
+				<!-- <img src="" id="verict"> -->
+			</div>
+        	<div class="za">
+        		<button type="button" class="btn btn-info btn-block" id="submit">注册</button>
+        	</div>
+        </form>
+         	</div>
+	 </div>
+	 <div>
+		 <!-- <button id="tologout">退出登录</button> -->
+	 </div>
+	 <script src="./js/regisAndLogin.js"></script>
+ </body>
+ </html>

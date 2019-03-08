@@ -1,0 +1,222 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>个人中心</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/css样式.css" rel="stylesheet" type="text/css" media="all"/>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</head>
+<body class="Both" onload=" popRightWindow();">
+	<div id="root">
+
+	<div class="ti">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="nav navbar-nav" >
+                        <a class="tubiao"  href="index.html"></a>
+                    </div>
+                </div>
+								<logehead></logehead>
+                <!-- <div class="collapse navbar-collapse"id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right" id="first" style="text-align: center; float: none;display: none;">
+                        <li class="a" style="float: none; display: inline-block;">
+                            <div class="piture">
+                                <a href=""><img src=""></a>
+                            </div>
+                        </li>
+                        <li class="a dropdown icon" style="float: none; display: inline-block; margin-top: 3px;">
+                            <a href="person.html" class="eassy"><img src="img/人才.png">个人中心</a>
+                        </li>
+                        <li class="a icon" style="float: none; display: inline-block; margin-top: 3px;">
+                            <a href="write.html" class="eassy"><img src="img/3.png">写文章</a>
+                        </li>
+                    </ul>
+                    <ul  class="nav navbar-nav navbar-right" id="second" style="text-align: center; float: none;display: block;">
+						<li class="a" style="float: none; display: inline-block;">
+							<div class="piture">
+								<a href=""><img src=""></a>
+                            </div>
+                        </li>
+                        <li class="a dropdown icon tiaozhuan"" style="float: none; display: inline-block; margin-top: 3px;">
+                            <a href="registered.html" class="dropdown-toggle">注册</a>
+                        </li>
+                        <li class="a icon"   style="float: none; display: inline-block; margin-top: 3px;">
+                            <a href="registered.html" class="dropdown-toggle eass">登录</a>
+                        </li>
+                    </ul>
+                </div> -->
+            </div>
+        </nav>
+    </div>
+	<div class="f">
+		<bloghead></bloghead>
+		<div class="ZZ">
+		<blognum></blognum>
+		</div>
+	</div>
+
+
+
+
+    <div class="window" id="center">
+    <div id="title1" class="title"><img id="bcd" src="http://pic002.cnblogs.com/images/2012/451207/2012100814082487.jpg" alt="关闭" /></div>
+  <div class="container-1">
+    <form role = "form">
+      <div>
+           &nbsp&nbsp&nbsp&nbsp
+    </div>
+      <div class="form-group" style="margin-left: 10px;">
+        <label style="float: left;">请输入原密码：</label>
+        <input type="password" name="密码" placeholder="enter password" style="display: block; float: left;">
+      </div>
+      <div>
+           &nbsp&nbsp&nbsp&nbsp
+    </div>
+       <br>
+      <div class="form-group" style="margin-left: 10px;">
+        <label style="float: left;">请输入新密码：</label>
+        <input type="password" name="密码" placeholder="enter password" style="display: block; float: left;">
+      </div>
+      <div class="form-group" style="margin-left: 5px;">
+        <div>
+           &nbsp&nbsp&nbsp&nbsp
+    </div>
+    <br>
+        <label style="float: left;">请再输入新密码：</label>
+        <input type="password" name="密码" placeholder="enter password" style="display: block; float: left;">
+      </div>
+    </form>
+    <div>
+           &nbsp&nbsp&nbsp&nbsp
+    </div>
+    <div class="form-group">
+    <button type="submit" class="btn btn-info" id="bu" style="margin: 0 125px;">提交</button>
+    </div>
+    </div>
+    </div>
+
+
+
+
+
+
+
+	<div class="zhongjian" id="zhongjian">
+    	<div class="you">
+      		<section class="container111">
+        		<div class="box">
+          			<input type="radio" name="input-paginacao" id="p1" checked>
+          			<input type="radio" name="input-paginacao" id="p2">
+          			<input type="radio" name="input-paginacao" id="p3">
+          			<input type="radio" name="input-paginacao" id="p4">
+          			<input type="radio" name="input-paginacao" id="p5">
+          			<input type="radio" name="input-paginacao" id="p6">
+          			<input type="radio" name="input-paginacao" id="p7">
+          			<input type="radio" name="input-paginacao" id="p8">
+          			<input type="radio" name="input-paginacao" id="p9">
+          			<input type="radio" name="input-paginacao" id="p10">
+		  			<input type="radio" name="input-paginacao" id="p11">
+          			<my-app></my-app>
+          		</div>
+      		</section>
+    	</div>
+  	</div>
+
+			</div>
+	<script type="text/javascript" src="js/homeblog.js"></script>
+    <script type="text/javascript">
+    var odiv = $('.bcd'),
+    oul = $('.abc ul'),
+    c = 0;
+    $(document).ready(function(){
+      odiv.click(function(){
+        if(c !=this){
+          oul.stop().hide(500);
+          $(this).next().stop().slideDown("slow","swing") ;
+          c = this;
+        }
+        else{
+          $(this).next().stop().slideUp("slow","swing") ;
+          c =0;
+        }
+      })
+    })
+    var i = 0;
+    $(function(){
+            $('.caidan').click(function(event){
+                event.stopPropagation();
+                if(i ==0){
+                    $('.wai').css("z-index","20");
+                    $('.demo').animate({right:'+=300px'});
+                    i = 1;
+                }
+            })
+
+            $('.return').click(function(event){
+             event.stopPropagation();
+            $('.demo').animate({right:'-=300px'});
+            $('.wai').css("z-index","5");
+            i = 0;
+            })
+            $('.demo').click(function(event){
+                event.stopPropagation();
+            })
+            $(document).click(function(event){
+              if(i==1){
+                event.stopPropagation();
+            $('.demo').animate({right:'-=300px'});
+            $('.wai').css("z-index","5");
+            i = 0;
+            }
+            })
+    })
+
+    var osecond = document.getElementById("second");
+            var ofirst = document.getElementById("first");
+            osecond.onclick = function(){
+                this.style.display = "none";
+                ofirst.style.display = "block";
+            }
+
+    var oBu = document.getElementById("bu");
+    var oBcd = document.getElementById("bcd");
+    var oZj = document.getElementById("zhongjian");
+    var oCe = document.getElementById("center");
+    var oSet = document.getElementById("set");
+
+    oBu.onclick = function ()
+    {
+      oZj.style.display = "block";
+      oCe.style.display = "none";
+    }
+
+    oBcd.onclick = function ()
+    {
+      oZj.style.display = "block";
+      oCe.style.display = "none";
+    }
+
+    oSet.onclick = function ()
+    {
+      oZj.style.display = "none";
+      oCe.style.display = "block";
+    }
+
+
+
+  </script>
+</body>
+</html>

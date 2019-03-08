@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>文章</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <style>
+        .body{
+            height: 100%;
+            background-color: #f5f6f7;
+        }
+        .icon img{
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+            margin-top: -5px;
+        }
+        .tubia{
+            display: inline-block;
+            width: 20px;
+            height: 10px;
+        }
+        .tubiao{
+            vertical-align: middle;
+            margin-top: 6px;
+            width: 168px;
+            height: 40px;
+            line-height: 40px;
+            background: url(img/logo.png) no-repeat ;
+            display: inline-block;
+        }
+
+        .title{
+            height: 50px;
+            /* border: 1px solid black; */
+            /* margin: 0 auto; */
+            font-size: 30px;
+            margin-top: 20px;
+
+
+        }
+        .title2{
+            border-top: 1px solid #dbdbdb;
+            margin-bottom: 20px;
+        }
+
+
+        .message{
+            height: 80px;
+            /* border: 1px solid black; */
+            /* margin: 0 auto; */
+            /* font-size: 30px; */
+
+            /* line-height: 80px; */
+            line-height: middle;
+
+        }
+        .picture{
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 1px solid black;
+            /* margin-top: 15px; */
+            display: inline-block;
+        }
+        .xinxi{
+            display: inline-block;
+            width: 200px;
+            position: absolute;
+            margin-left: 20px;
+        }
+
+        .la2{
+            margin-top: 27px;
+        }
+        .la3{
+            width: 100px;
+            margin-top: 56px;
+        }
+        .la4{
+            width: 39px;
+            height: 33px;
+            right: 0;
+            background: url(img/3.png);
+            /* background-color: red; */
+            z-index: 100;
+            margin-top: 47px;
+            cursor: pointer;
+        }
+        .p1{
+            display: inline-block;
+            margin-left: 20px;
+        }
+        .neirong{
+            /* height: 80px; */
+            /*border: 1px solid black;*/
+            /* margin: 0 auto; */
+            font-size: 30px;
+            background-color: #fff;
+            text-align: center;
+        }
+        .lala{
+            width: 40px;
+            height:40px;
+            border-radius: 50%;
+        }
+        .navbar-nav{
+            margin: 0;
+        }
+
+
+        .navbar{
+            margin-bottom: 0px!important;
+        }
+        .dati{
+            height: 100%;
+            background-color: #f5f6f7;
+        }
+        /* .title,.message,.neirong{
+            background-color: #fff;
+        } */
+    </style>
+</head>
+<body>
+    <div id='root'  class="dati">
+        <div class="ti">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <div class="nav navbar-nav" >
+                            <a class="tubia"></a>
+                            <a class="tubiao"  href="index.html"></a>
+                    </div>
+                </div>
+                <logehead></logehead>
+            </div>
+        </nav>
+        </div>
+
+            <div class="container">
+                <div class="row">
+                    <pagehead></pagehead>
+                    <div class="col-md-offset-2  col-md-8  col-xs-12 col-sm-12  title2" ></div>
+                    <pagemore></pagemore>
+                    <div class="col-md-offset-2  col-md-8  col-xs-12 col-sm-12 neirong" style="padding-top:50px;font-size:16px;text-align:left;color:#333;" id ='docontent'>
+                    </div>
+                </div>
+            </div>
+</div>
+        <script src="./js/passagereturn.js"></script>
+        <script>
+            var ola = document.getElementsByClassName("la4")[0];
+            var osecond = document.getElementById("second");
+            var ofirst = document.getElementById("first");
+            osecond.onclick = function(){
+                this.style.display = "none";
+                ofirst.style.display = "block";
+            }
+            var i = 0;
+            ola.onclick = function(){
+                this.src = this.src.replace(/1.png/,"2.png");
+                if(i == 0){
+                    this.src = this.src.replace(/1.png/,"2.png");
+                    i++;
+                    }else{
+                        this.src = this.src.replace(/2.png/,"1.png");
+                        i--;
+                    }
+
+
+
+            }
+        </script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+---
+title: ES6中的let命令
+date: 2018-05-30 17:41:04
+tags: ES6
+thumbnail: "http://p6894qyp6.bkt.clouddn.com/68875657_p0.png"
+---
+ES6中新规定了let命令，用于声明变量，但是有了var命令，我们为什么还需要let命令呢。
+
+let用于声明变量，类似于var，但是用let声明的变量只在声明let的代码块内有效。
+
+# var和let的作用域区别
+```
+{
+    var x = 2018;
+    let y = 2019;
+}
+
+console.log(x)       // 2018
+console.log(y)       // Uncaught ReferenceError: y is not defined
+```
+
+还有js经典的循环问题
+```
+var a=[];
+for(var i=0;i<10;i++){
+	a[i]=function(){
+        console.log(i);
+    }
+}
+console.log(a[2]());        // 10
+```
+上面是用var声明i变量，在全局范围内有效，其中console.log(i)指向的是全局变量的i，也就是10次循环之后的值，也就是10.如果是用let声明i呢。
+```
+var a=[];
+for(let i=0;i<10;i++){
+    a[i]=function(){
+        console.log(i);
+    }
+}
+console.log(a[2]());        // 2
+```
+这里的i用let声明，也就是i只在当前循环有效，每一次循环的i都是新的变量，所以可以准确的把每次i的值赋值给对应的数组元素。
+
+
+在这里要说明for循环处是一个父作用域，而循环内是一个单独的子作用域。
+```
+for(let i=0;i<3;i++){
+    let i = "children";
+    console.log(i);
+}
+// children
+// children
+// children
+```
+这里的控制循环中的i不会受内部i的影响，说明在各自的作用域内。
+
+# 变量提升？
+
+js中变量的一大特点就是变量提升了，var会变量提升，那么let呢？
+
+## 什么是变量提升
+
+```
+console.log(x);         // undefined
+var x = 2018;
+```
+在一般的程序中，我们会认为以上代码会报错Uncaught ReferenceError: x is not defined。因为在声明x之前就调用了x。但是js中会显示undefined，这就是变量提升了，在默认把所用变量的声明提升到程序顶部，类似于一下代码。
+```
+var x;
+console.log(x);         // undefined
+x = 2018;
+```
+需要注意的是，在变量提升时。只会提升变量的声明，不会提升赋值，这也就是为什么输出是undefined，而不是2018。
+
+## let木有变量提升
+```
+console.log(x);         // Uncaught ReferenceError: x is not defined
+let x = 2018;
+```
+
+# 暂时性死区（TDZ）
+
+暂时性死区就是在代码块内，使用let命令声明变量之前，该变量是不可用的。
+
+```
+var x = 2018;
+if(true){
+    x = 2019;       // Uncaught ReferenceError: x is not defined
+    let x;
+}
+```
+只要在块级作用域中存在let命令，那么let声明的变量会绑定当前作用域，不受外部影响。
+
+```
+if(true){
+    //开始暂时性死区
+    x = 'begin';        //Uncaught ReferenceError: x is not defined
+    console.log(x);     //Uncaught ReferenceError: x is not defined
+
+    let x;      //暂时性死区结束
+    console.log(x);     //undefined
+
+    x = 'end';
+    console.log(x);     // end
+}
+```
+上方代码演示了暂时性死区的范围。
+有一些暂时性死区是很隐蔽的。
+```
+function fun (x = y , y = 2){
+    return [x,y]
+}
+fun();      //Uncaught ReferenceError: y is not defined
+```
+这里的fun函数中，先是执行x=y语句，由于之后才进行y=2的声明，所以在y=2声明之前会暂时性死区。
+如果改成以下这个样子，那么这个函数就没有问题了。
+```
+function fun (x = 2 , y = x){
+    return [x,y]
+}
+fun();      // [2,2]
+```
+总之，暂时性死区的本质就是，只要进入当前作用域，所要使用的变量就已经存在，但是不可获取，只有等到声明变量的那一行代码出现，才可以获取和使用该变量。
+
+# 不允许重复声明
+
+let不允许在相同作用域中重复声明同一个变量，哪怕不用let命令。
+
+```
+function fun () {
+    let x = 10;
+    var x = 11;
+}
+fun();      //报错
+```
+同理，函数内部也不能声明和参数一样的变量。
+```
+function fun (x) {
+    let x;
+}
+fun();      //报错
+```
+
+
+
+这就是ES6中一些let命令的介绍。
+
+
+封面画师：[ど〜ら]
+
+
+
+[ど〜ら]:https://www.pixiv.net/member.php?id=974003
