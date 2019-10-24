@@ -2,7 +2,7 @@ var mysql  = require('mysql');
 var express=require("express");
 var connection = mysql.createConnection({
   host     : 'localhost',
-  user     : 'root',
+  user     : '123456',
   password : 'xiyounet',
   database: 'blog',
 });
