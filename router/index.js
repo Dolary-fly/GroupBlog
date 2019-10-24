@@ -8,7 +8,7 @@ var mysql  = require('mysql');
 var session=require("express-session");
 var db=mysql.createConnection({  host:'localhost',
   user:'root',
-  password:'xiyounet',
+  password:'123456',
   database: 'blog'});
 
 var cookieParase = require('cookie-parser');
